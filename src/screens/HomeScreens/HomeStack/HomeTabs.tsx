@@ -3,6 +3,7 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import HomeScreen from '../HomeScreen';
 import { theme } from '../../../theme/theme';
+import BuzzScreen from '../../Buzz';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -29,15 +30,15 @@ const HomeTabs = () => {
         tabBarInactiveTintColor: theme.colors.white,
         tabBarLabelStyle: {
           fontSize: 15,
-          fontWeight:"600",
+          fontWeight: "600",
           fontFamily: 'Poppins-Regular',
           fontStyle: 'normal',
           lineHeight: 20,
           color: theme.colors.white,
           alignSelf: 'center',
-          
+
         },
-        
+
         tabBarIndicatorStyle: {
           backgroundColor: theme.colors.red,
           height: 4,
@@ -48,13 +49,13 @@ const HomeTabs = () => {
         tabBarShowIcon: true,
         tabBarShowLabel: true,
 
-        
+
       }}
-      
+
     >
-      <Tab.Screen 
-      name="POSTS" 
-      component={HomeScreen} 
+      <Tab.Screen
+        name="POSTS"
+        component={BuzzScreen}
       />
       {/* <Tab.Screen 
       name="BUZZ" 

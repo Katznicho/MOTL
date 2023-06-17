@@ -12,11 +12,16 @@ import { theme } from './src/theme/theme';
 import { generalstyles } from './src/generalstyles/generalstyles';
 import BaseScreen from './src/screens/BaseScreen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import WelcomeScreen from './src/screens/WeclomSecreens';
+import LandingScreen from './src/screens/SplashScreens/SplahScreen';
+import SplashScreen from 'react-native-splash-screen'
+import EnableLocationScreen from './src/screens/WeclomSecreens/EnableLocationScreen';
+import FollowScreen from './src/screens/WeclomSecreens/FollowScreen';
 
 
 export default function App() {
   const [connected, setIsConnected] = useState<boolean | null>(false)
-
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const checkInternet = () => {
 
     NetInfo.addEventListener(state => {
@@ -27,17 +32,20 @@ export default function App() {
   useEffect(() => { }, [connected]);
 
   useEffect(() => {
+    SplashScreen.hide()
     checkInternet();
     LogBox.ignoreAllLogs();
 
   }, []);
+
+
 
   return connected ? (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <QueryClientProvider client={new QueryClient()}>
-            <BaseScreen />
+            <LandingScreen />
           </QueryClientProvider>
           <FlashMessage position="top" animated />
         </PersistGate>
@@ -66,4 +74,7 @@ export default function App() {
     </Button>
   </View>
   )
+
+
+
 }

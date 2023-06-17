@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   View,
   Text,
@@ -5,7 +6,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ModalDropdown from 'react-native-modal-dropdown';
 import {
   ArrowLeftIcon,
@@ -13,22 +14,31 @@ import {
   ChevronDownIcon,
 } from 'react-native-heroicons/solid';
 import SelectDropdown from 'react-native-select-dropdown';
+import { RootState } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAppIntro } from '../../redux/slices/UserSlice';
 const data = ['BERUGA FC.', '', 'BERUGA FC.', 'BERUGA FC.'];
 
 const SubcriptionScreen = () => {
   const [subcribeFee, SetSubcriptionFee] = useState(25000);
+  const { } = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
+  const onFinish = () => {
+    dispatch(setAppIntro())
+  }
   return (
     <View className=" bg-[#fe7878] h-full w-full">
-      <View className=" flex-row items-center justify-between m-4">
+      {/* <View className=" flex-row items-center justify-between m-4">
         <TouchableOpacity>
           <ArrowLeftIcon className=" " color="#50165F" />
         </TouchableOpacity>
 
-        <Image source={require('./assests/circles.png')} />
+        <Image source={require('../../assets/circles.png')} />
         <TouchableOpacity>
           <Text className=" text-white">SKIP</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
       <View className="items-center text-[18px]">
         <Text className="text-white text-[20px] font-bold">MEMBERSHIP</Text>
         <Text className="text-white text-[20px] font-bold">
@@ -40,10 +50,14 @@ const SubcriptionScreen = () => {
         <View className="border border-[#50165F] items-center w-14 "></View>
       </View>
 
-      <Image source={require('./assests/banner.png')} className=" h-60" />
+      <ImageBackground source={require('../../assets/banner.png')} className=" h-60 justify-center items-center" >
+        <TouchableOpacity className=" border mt-32 border-[#FF0000] rounded-[20px] w-[147px] h-[35px] justify-center items-center bg-[#50165f]">
+          <Text className="text-white text-[21px]">Donate</Text>
+        </TouchableOpacity>
+      </ImageBackground>
 
       <ImageBackground
-        source={require('./assests/bg-2.png')}
+        source={require('../../assets/bg-2.png')}
         className="w-full h-full items-center relative">
         <View
           className={`bg-[#D9D9D9] 
@@ -51,33 +65,28 @@ const SubcriptionScreen = () => {
            rounded-[15px] h-[35px] w-[375px]   pt-1 flex-row  px-2 space-x-2`}>
           <TouchableOpacity
             onPress={() => SetSubcriptionFee(25000)}
-            className={`${
-              subcribeFee === 25000 ? 'bg-[FFFFFF]' : ''
-            }  w-[116px] h-[28px]  rounded-[15px] border items-center justify-center `}>
+            className={`${subcribeFee === 25000 ? 'bg-[FFFFFF]' : ''
+              }  w-[116px] h-[28px]  rounded-[15px] border border-gray-400 items-center justify-center `}>
             <Text className="font-bold text-black text-[15px]">SLIVER</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => SetSubcriptionFee(50000)}
-            className={`${
-              subcribeFee === 50000 ? 'bg-[#D3C00C]' : ''
-            }  w-[116px] h-[28px]  rounded-[15px] border items-center justify-center `}>
+            className={`${subcribeFee === 50000 ? 'bg-[#D3C00C]' : ''
+              }  w-[116px] h-[28px]  rounded-[15px]  items-center justify-center `}>
             <Text className="font-bold text-black text-[15px]">GOLD</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => SetSubcriptionFee(100000)}
-            className={`bg-[FFFFFF] ${
-              subcribeFee === 100000 ? 'bg-[#705C5C]' : ''
-            } w-[116px] h-[28px] text-[15px]  rounded-[15px]  items-center justify-center `}>
+            className={`bg-[FFFFFF] ${subcribeFee === 100000 ? 'bg-[#705C5C]' : ''
+              } w-[116px] h-[28px] text-[15px]  rounded-[15px]  items-center justify-center `}>
             <Text className="font-bold text-black">PLATINUM</Text>
           </TouchableOpacity>
         </View>
 
         <View
-          className={` ${
-            subcribeFee === 25000 ? 'bg-[#D9D9D9]' : ' bg-[#D3C00C]'
-          } ${
-            subcribeFee === 100000 ? 'bg-[#705C5C]' : ''
-          } h-[187px] w-[375px] rounded-[15px] mt-3 `}>
+          className={` ${subcribeFee === 25000 ? 'bg-[#D9D9D9]' : ' bg-[#D3C00C]'
+            } ${subcribeFee === 100000 ? 'bg-[#705C5C]' : ''
+            } h-[187px] w-[375px] rounded-[15px] mt-3 `}>
           <Text className="font-bold text-black text-[17px] justify-center items-center mb-2 pt-2  ml-[130px] ">
             {subcribeFee}/=
           </Text>
@@ -107,25 +116,23 @@ const SubcriptionScreen = () => {
                 Silver budge related emojis and interactions
               </Text>
             </View>
-            <ModalDropdown
-              options={data}
-              className=" border p-2 w-80   ml-[4px]  justify-center flex items-center  "
-              renderRow={option => (
-                <Text className="w-10 text-black ml-10 items-start justify-center">
-                  {option}
-                </Text>
-              )}></ModalDropdown>
+            <View className="w-[334px] h-[40px] bg-[#f5f5f5] flex-row items-center justify-center px-3 ">
+              <Image source={require('../../assets/EXTREME.png')} className="w-[27px] h-[29px] ml-14" />
+              <Text className="text-black  font-bold flex-1  "> BERUGA FC.</Text>
+              <TouchableOpacity><Image source={require('../../assets/drownarrow.png')} /></TouchableOpacity>
+
+
+            </View>
+
           </View>
         </View>
-        <TouchableOpacity className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-3 ">
+        <TouchableOpacity onPress={onFinish}
+          className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-3 ">
           <Text className="text-white font-bold text-[15px]">Subcribe</Text>
         </TouchableOpacity>
-        <Image
-          source={require('./assests/bottomlogo.png')}
-          className=" bottom-[-40]  fixed "
-        />
+
       </ImageBackground>
-    </View>
+    </View >
   );
 };
 

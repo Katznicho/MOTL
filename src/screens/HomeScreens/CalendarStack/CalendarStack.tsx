@@ -4,18 +4,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import TopBar from '../../../components/AppBars/TopBar';
 import { theme } from '../../../theme/theme';
-import HomeScreen from '../HomeScreen';
-import Fixtures from './Fixtures';
+import CalendarTabs from './CalendarTabs';
 
 const Stack = createStackNavigator();
 
 const CalendarStack = () => {
   return (
     <Stack.Navigator
+      initialRouteName='FixtureScreen'
     >
       <Stack.Screen
         name="FixtureScreen"
-        component={Fixtures}
+        component={CalendarTabs}
         options={{
           header: props => (
             <TopBar
@@ -29,7 +29,7 @@ const CalendarStack = () => {
                 fontFamily: "LeagueGothic-Regular",
                 fontStyle: 'normal',
                 fontSize: 28,
-                lineHeight:34,
+                lineHeight: 34,
 
               }}
               subtitleStyle={{

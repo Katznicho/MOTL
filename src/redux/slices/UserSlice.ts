@@ -55,7 +55,8 @@ export const userSlice = createSlice({
       state.user = null;
     },
     setAppIntro: state => {
-      state.appIntro = false;
+       console.log("updating")
+      state.appIntro = true;
     },
     loginUser: state => {
       state.isLoggedIn = true;

@@ -9,13 +9,13 @@ import HomeScreen from './HomeScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Enypto from 'react-native-vector-icons/Entypo';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStack from './HomeStack/HomeStack';
 import FrameScreen from './FrameScreen';
-import Fixtures from './CalendarStack/Fixtures';
 import CalendarStack from './CalendarStack/CalendarStack';
 import Posts from './Post';
+
 
 
 //const Tab = createMaterialBottomTabNavigator();
@@ -50,6 +50,8 @@ const BaseStack = () => {
         headerShown: false,
         tabBarActiveTintColor: theme.colors.red,
         tabBarInactiveTintColor: theme.colors.white,
+
+
         tabBarLabelStyle: {
           fontSize: 11,
           fontWeight: '400',
@@ -76,16 +78,17 @@ const BaseStack = () => {
         tabBarLabel: 'Home',
         tabBarAccessibilityLabel: 'Home',
 
-        tabBarIcon: ({ color }: any) => (
+        tabBarIcon: ({ color, focused }: any) => !focused ? (
+          <View><Image source={require("../../assets/homeicontwo.png")} /></View>
+
+
+        ) : (
           <View>
-            <Enypto
-              name="home"
-              color={color}
-              size={25}
+            <Image
+              source={require("../../assets/homeiconeone.png")}
             />
           </View>
-
-        ),
+        )
       }}
 
 
@@ -97,15 +100,22 @@ const BaseStack = () => {
       options={{
         tabBarLabel: 'Fixtures',
         tabBarAccessibilityLabel: 'Fixtures',
-        tabBarIcon: ({ color }: any) => (
-          <FontAwesome5
-            name="calendar"
-            color={color}
-            size={22}
-          />
-        ),
+        tabBarIcon: ({ color, focused }: any) => !focused ? (
+          <View><Image source={require("../../assets/calendertwo.png")} /></View>
 
+
+        ) : (
+          <View>
+            <Image
+              source={require("../../assets/calendericonone.png")}
+            />
+          </View>
+        )
       }}
+
+
+
+
     />
 
     <Tab.Screen
@@ -158,14 +168,19 @@ const BaseStack = () => {
       options={{
         tabBarLabel: 'Shop',
         tabBarAccessibilityLabel: 'Shop',
-        tabBarIcon: ({ color }: any) => (
-          <MaterialCommunityIcons
-            name="shopping"
-            color={color}
-            size={25}
-          />
-        ),
+        tabBarIcon: ({ color, focused }: any) => !focused ? (
+          <View><Image source={require("../../assets/shopicontwo.png")} /></View>
+
+
+        ) : (
+          <View>
+            <Image
+              source={require("../../assets/shopiconone.png")}
+            />
+          </View>
+        )
       }}
+
     />
 
     <Tab.Screen
@@ -175,10 +190,7 @@ const BaseStack = () => {
         tabBarLabel: 'Stats',
         tabBarAccessibilityLabel: 'Stats',
         tabBarIcon: ({ color }: any) => (
-          <FontAwesome5
-            name="signal"
-            color={color}
-            size={18}
+          <Image source={require("../../assets/stat.png")}
           />
         ),
       }}
