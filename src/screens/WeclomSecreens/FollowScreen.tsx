@@ -7,7 +7,7 @@ import ModalPopup from '../../components/Model';
 import { useNavigation } from '@react-navigation/native';
 
 const FollowScreen = () => {
-    const navigation = useNavigation<any>();
+    // const navigation = useNavigation<any>();
     const [modalVisible, setModalVisible] = useState(false);
     const [follow, setFollow] = useState(false)
     const [followText, setFolloText] = useState("Follow ")

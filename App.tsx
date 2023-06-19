@@ -17,6 +17,8 @@ import LandingScreen from './src/screens/SplashScreens/SplahScreen';
 import SplashScreen from 'react-native-splash-screen'
 import EnableLocationScreen from './src/screens/WeclomSecreens/EnableLocationScreen';
 import FollowScreen from './src/screens/WeclomSecreens/FollowScreen';
+import PhoneVerification from './src/screens/WeclomSecreens/PhoneVerification';
+import PaymentScreen from './src/screens/PaymentScreen';
 
 
 export default function App() {
@@ -40,41 +42,43 @@ export default function App() {
 
 
 
-  return connected ? (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <QueryClientProvider client={new QueryClient()}>
-            <LandingScreen />
-          </QueryClientProvider>
-          <FlashMessage position="top" animated />
-        </PersistGate>
-      </Provider>
+  // return connected ? (
+  //   <GestureHandlerRootView style={{ flex: 1 }}>
+  //     <Provider store={store}>
+  //       <PersistGate loading={null} persistor={persistor}>
+  //         <QueryClientProvider client={new QueryClient()}>
+  //           <LandingScreen />
+  //         </QueryClientProvider>
+  //         <FlashMessage position="top" animated />
+  //       </PersistGate>
+  //     </Provider>
 
-    </GestureHandlerRootView>
-
-
-  ) : (<View
-    style={[
-      generalstyles.container,
-      { backgroundColor: theme.colors.primary, marginHorizontal: 10 },
-      generalstyles.centerContent,
-    ]}>
-    <Text>Please Enable Internet Access and Restart the App</Text>
-    <Button
-
-      mode="contained"
+  //   </GestureHandlerRootView>
 
 
-      buttonColor={theme.colors.buttonColor}
-      textColor={theme.colors.primary}
-      onPress={checkInternet}
-    >
-      Retry
-    </Button>
-  </View>
+  // ) : (<View
+  //   style={[
+  //     generalstyles.container,
+  //     { backgroundColor: theme.colors.primary, marginHorizontal: 10 },
+  //     generalstyles.centerContent,
+  //   ]}>
+  //   <Text>Please Enable Internet Access and Restart the App</Text>
+  //   <Button
+
+  //     mode="contained"
+
+
+  //     buttonColor={theme.colors.buttonColor}
+  //     textColor={theme.colors.primary}
+  //     onPress={checkInternet}
+  //   >
+  //     Retry
+  //   </Button>
+  // </View>
+  // )
+
+
+  return (
+    <PaymentScreen />
   )
-
-
-
 }
