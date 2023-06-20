@@ -19,10 +19,15 @@ const FixtureScreen = () => {
   return (
 
     <SafeAreaView className="bg-[#8C27A] flex-1">
+       
       <ImageBackground
         source={require('../../assets/bg3.png')}
         className="flex-1">
-        <View className="bg-[#FF8F8F] w-full h-[100px]">
+            <ScrollView 
+            showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} 
+            >
+
+            <View className="bg-[#FF8F8F] w-full h-[100px] pb-[100px]">
           <View className=" bg-[#C2628E] w-82 mr-3  mt-7  flex-row  ml-3  h-[40px] items-center   space-x-[90px] px-5 rounded-[5px] justify-center">
             <Image source={require('../../assets/bag1.png')} className="" />
 
@@ -429,6 +434,9 @@ const FixtureScreen = () => {
             </ScrollView>
           </View>
         </View>
+                
+            </ScrollView>
+       
 
         {/* <BottomBar /> */}
       </ImageBackground>
