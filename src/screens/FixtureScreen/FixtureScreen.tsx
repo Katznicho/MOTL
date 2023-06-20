@@ -31,181 +31,185 @@ const FixtureScreen = () => {
             <View className=" bg-[#C2628E] w-82 mr-3  mt-7  flex-row  ml-3  h-[40px] items-center   space-x-[90px] px-5 rounded-[5px] justify-center">
               <Image source={require('../../assets/bag1.png')} className="" />
 
-              <TextInput
-                placeholder="SORT BY TEAM"
-                placeholderTextColor="white"
-                className="text-white  w-30 "
-                maxLength={13}
-              />
-              <Image source={require('../../assets/icon.png')} className="" />
-            </View>
-          </View>
-          <View>
-            <View className="h-full w-full bg-[#c18286] mt-5 ">
-              <ScrollView>
-                <View className="bg-[#B66194]   w-82 ml-3 m-3 mr-3 rounded-[10px]">
-                  <View className=" flex-row items-center  px-10  py-3">
-                    <Text style={styles.dateText}>
-                      Today 25th June 2023
-                    </Text>
-                    <EllipsisHorizontalCircleIcon
-                      size={35}
-                      color="#50165F"
-                      className=""
-                    />
-                  </View>
+              <View className="bg-[#FF8F8F] w-full h-[100px] pb-[100px]">
+                <View className=" bg-[#C2628E] w-82 mr-3  mt-7  flex-row  ml-3  h-[40px] items-center   space-x-[90px] px-5 rounded-[5px] justify-center">
+                  <Image source={require('../../assets/bag1.png')} className="" />
 
-                  <View className="">
-                    <View className="border-[0.5px] border-[#FF0000]"></View>
-                    <View className="flex-row space-x-6 justify-center items-center  ">
-                      <ImageBackground
-                        source={require('../../assets/bg1.png')}
-                        className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
-                        <Text className="text-white  text-[15px] ">
-                          Game week 7
+                  <TextInput
+                    placeholder="SORT BY TEAM"
+                    placeholderTextColor="white"
+                    className="text-white  w-30 "
+                    maxLength={13}
+                  />
+                  <Image source={require('../../assets/icon.png')} className="" />
+                </View>
+              </View>
+              <View>
+                <View className="h-full w-full bg-[#c18286] mt-5 ">
+                  <ScrollView>
+                    <View className="bg-[#B66194]   w-82 ml-3 m-3 mr-3 rounded-[10px]">
+                      <View className=" flex-row items-center  px-10  py-3">
+                        <Text style={styles.dateText}>
+                          Today 25th June 2023
                         </Text>
-                      </ImageBackground>
-                      <Image
-                        source={require('../../assets/bell.png')}
-                        className="border"
-                      />
-                    </View>
-                  </View>
+                        <EllipsisHorizontalCircleIcon
+                          size={35}
+                          color="#50165F"
+                          className=""
+                        />
+                      </View>
 
-                  <View className=" items-center justify-center p-3">
-                    <View className="flex-row  space-x-1">
-                      <Text style={styles.teamText}>
-                        BERUGA FC
-                      </Text>
-                      <Image
-                        source={require('../../assets/burenga.png')}
-                        className=" w-[45px] h-[47px]"
-                      />
-                      <View className="bg-[#50165F] w-[76px] h-[30px] rounded-[5px] flex-row items-center justify-center space-x-2">
-                        <Text className="text-white  font-bold text-[24px]">
-                          3
-                        </Text>
-                        <View className="border-r-2 h-[30px] border-[#FF0000]" />
-                        <Text className="text-white  font-bold text-[24px]">
-                          1
+                      <View className="">
+                        <View className="border-[0.5px] border-[#FF0000]"></View>
+                        <View className="flex-row space-x-6 justify-center items-center  ">
+                          <ImageBackground
+                            source={require('../../assets/bg1.png')}
+                            className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
+                            <Text className="text-white  text-[15px] ">
+                              Game week 7
+                            </Text>
+                          </ImageBackground>
+                          <Image
+                            source={require('../../assets/bell.png')}
+                            className="border"
+                          />
+                        </View>
+                      </View>
+
+                      <View className=" items-center justify-center p-3">
+                        <View className="flex-row  space-x-1">
+                          <Text style={styles.teamText}>
+                            BERUGA FC
+                          </Text>
+                          <Image
+                            source={require('../../assets/burenga.png')}
+                            className=" w-[45px] h-[47px]"
+                          />
+                          <View className="bg-[#50165F] w-[76px] h-[30px] rounded-[5px] flex-row items-center justify-center space-x-2">
+                            <Text className="text-white  font-bold text-[24px]">
+                              3
+                            </Text>
+                            <View className="border-r-2 h-[30px] border-[#FF0000]" />
+                            <Text className="text-white  font-bold text-[24px]">
+                              1
+                            </Text>
+                          </View>
+                          <Image
+                            source={require('../../assets/Olympiaco.png')}
+                            className=" w-[45px] h-[47px]"
+                          />
+                          <Text style={styles.teamText}>
+                            Olympiaco Fc
+                          </Text>
+                        </View>
+                        <Text className="text-white text-[20px]  font-bold ">
+                          FT
                         </Text>
                       </View>
-                      <Image
-                        source={require('../../assets/Olympiaco.png')}
-                        className=" w-[45px] h-[47px]"
-                      />
-                      <Text style={styles.teamText}>
-                        Olympiaco Fc
-                      </Text>
-                    </View>
-                    <Text className="text-white text-[20px]  font-bold ">
-                      FT
-                    </Text>
-                  </View>
 
-                  <View className="">
-                    <View className="border-[0.5px] border-[#FF0000]"></View>
-                    <View className="flex-row space-x-6 justify-center items-center  ">
-                      <ImageBackground
-                        source={require('../../assets/bg1.png')}
-                        className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
-                        <Text className="text-white  text-[15px] py-1">
-                          Game week 7
-                        </Text>
-                      </ImageBackground>
-                      <Image source={require('../../assets/bell.png')} />
-                    </View>
-                  </View>
+                      <View className="">
+                        <View className="border-[0.5px] border-[#FF0000]"></View>
+                        <View className="flex-row space-x-6 justify-center items-center  ">
+                          <ImageBackground
+                            source={require('../../assets/bg1.png')}
+                            className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
+                            <Text className="text-white  text-[15px] py-1">
+                              Game week 7
+                            </Text>
+                          </ImageBackground>
+                          <Image source={require('../../assets/bell.png')} />
+                        </View>
+                      </View>
 
-                  <View className=" items-center justify-center p-3">
-                    <View className="flex-row  space-x-1">
-                      <Text style={styles.teamText}>
-                        LEGENDS FC
-                      </Text>
-                      <Image
-                        source={require('../../assets/LEGENDS.png')}
-                        className=" w-[45px] h-[47px]"
-                      />
-                      <View className="bg-[#50165F] w-[76px] h-[30px] rounded-[5px] flex-row items-center justify-center space-x-2">
-                        <Text className="text-white  font-bold text-[24px]">
-                          3
-                        </Text>
-                        <View className="border-r-2 h-[30px] border-[#FF0000]" />
-                        <Text className="text-white  font-bold text-[24px]">
-                          1
+                      <View className=" items-center justify-center p-3">
+                        <View className="flex-row  space-x-1">
+                          <Text style={styles.teamText}>
+                            LEGENDS FC
+                          </Text>
+                          <Image
+                            source={require('../../assets/LEGENDS.png')}
+                            className=" w-[45px] h-[47px]"
+                          />
+                          <View className="bg-[#50165F] w-[76px] h-[30px] rounded-[5px] flex-row items-center justify-center space-x-2">
+                            <Text className="text-white  font-bold text-[24px]">
+                              3
+                            </Text>
+                            <View className="border-r-2 h-[30px] border-[#FF0000]" />
+                            <Text className="text-white  font-bold text-[24px]">
+                              1
+                            </Text>
+                          </View>
+                          <Image
+                            source={require('../../assets/CARDINAL.png')}
+                            className=" w-[45px] h-[47px]"
+                          />
+                          <Text style={styles.teamText}>
+                            THE CARDINAL...
+                          </Text>
+                        </View>
+                        <Text className="text-white text-[20px]  font-bold ">
+                          FT
                         </Text>
                       </View>
-                      <Image
-                        source={require('../../assets/CARDINAL.png')}
-                        className=" w-[45px] h-[47px]"
-                      />
-                      <Text style={styles.teamText}>
-                        THE CARDINAL...
-                      </Text>
-                    </View>
-                    <Text className="text-white text-[20px]  font-bold ">
-                      FT
-                    </Text>
-                  </View>
-                  <View className="">
-                    <View className="border-[0.5px] border-[#FF0000]"></View>
-                    <View className="flex-row space-x-6 justify-center items-center  ">
-                      <ImageBackground
-                        source={require('../../assets/bg1.png')}
-                        className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
-                        <Text className="text-white  text-[15px] py-1">
-                          Game week 7
-                        </Text>
-                      </ImageBackground>
-                      <Image source={require('../../assets/bell.png')} />
-                    </View>
-                  </View>
+                      <View className="">
+                        <View className="border-[0.5px] border-[#FF0000]"></View>
+                        <View className="flex-row space-x-6 justify-center items-center  ">
+                          <ImageBackground
+                            source={require('../../assets/bg1.png')}
+                            className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
+                            <Text className="text-white  text-[15px] py-1">
+                              Game week 7
+                            </Text>
+                          </ImageBackground>
+                          <Image source={require('../../assets/bell.png')} />
+                        </View>
+                      </View>
 
-                  <View className=" items-center justify-center p-3">
-                    <View className="flex-row  space-x-1">
-                      <Text style={styles.teamText}>
-                        EXTREME FC
-                      </Text>
-                      <Image
-                        source={require('../../assets/EXTREME.png')}
-                        className=" w-[45px] h-[47px]"
-                      />
-                      <View className="bg-[#50165F] w-[76px] h-[30px] rounded-[5px] flex-row items-center justify-center space-x-2">
-                        <Text className="text-white  font-bold text-[24px]">
-                          3
-                        </Text>
-                        <View className="border-r-2 h-[30px] border-[#FF0000]" />
-                        <Text className="text-white  font-bold text-[24px]">
-                          1
+                      <View className=" items-center justify-center p-3">
+                        <View className="flex-row  space-x-1">
+                          <Text style={styles.teamText}>
+                            EXTREME FC
+                          </Text>
+                          <Image
+                            source={require('../../assets/EXTREME.png')}
+                            className=" w-[45px] h-[47px]"
+                          />
+                          <View className="bg-[#50165F] w-[76px] h-[30px] rounded-[5px] flex-row items-center justify-center space-x-2">
+                            <Text className="text-white  font-bold text-[24px]">
+                              3
+                            </Text>
+                            <View className="border-r-2 h-[30px] border-[#FF0000]" />
+                            <Text className="text-white  font-bold text-[24px]">
+                              1
+                            </Text>
+                          </View>
+                          <Image
+                            source={require('../../assets/ROVERS.png')}
+                            className=" w-[45px] h-[47px]"
+                          />
+                          <Text style={styles.teamText}>
+                            ROVERS FC
+                          </Text>
+                        </View>
+                        <Text className="text-white text-[20px]  font-bold ">
+                          FT
                         </Text>
                       </View>
-                      <Image
-                        source={require('../../assets/ROVERS.png')}
-                        className=" w-[45px] h-[47px]"
-                      />
-                      <Text style={styles.teamText}>
-                        ROVERS FC
-                      </Text>
-                    </View>
-                    <Text className="text-white text-[20px]  font-bold ">
-                      FT
-                    </Text>
-                  </View>
-                  <View className="">
-                    <View className="border-[0.5px] border-[#FF0000]"></View>
-                    <View className="flex-row space-x-6 justify-center items-center  ">
-                      <ImageBackground
-                        source={require('../../assets/bg1.png')}
-                        className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
-                        <Text className="text-white  text-[15px] py-1">
-                          Game week 7
-                        </Text>
-                      </ImageBackground>
-                      <Image source={require('../../assets/bell.png')} />
-                    </View>
-                  </View>
+                      <View className="">
+                        <View className="border-[0.5px] border-[#FF0000]"></View>
+                        <View className="flex-row space-x-6 justify-center items-center  ">
+                          <ImageBackground
+                            source={require('../../assets/bg1.png')}
+                            className="w-[250] h-[30px]  border-[0.5] justify-center items-center">
+                            <Text className="text-white  text-[15px] py-1">
+                              Game week 7
+                            </Text>
+                          </ImageBackground>
+                          <Image source={require('../../assets/bell.png')} />
+                        </View>
+                      </View>
 
-                  {/* <View className=" items-center justify-center p-3">
+                      {/* <View className=" items-center justify-center p-3">
                     <View className="flex-row  space-x-1">
                       <Text className="text-white font-semibold text-[12px]">
                         BERUGA FC
@@ -235,10 +239,10 @@ const FixtureScreen = () => {
                       FT
                     </Text>
                   </View> */}
-                </View>
+                    </View>
 
-                {/*  */}
-                {/* <View className="bg-[#B66194]   w-82 ml-3 m-3 mr-3 rounded-[10px]">
+                    {/*  */}
+                    {/* <View className="bg-[#B66194]   w-82 ml-3 m-3 mr-3 rounded-[10px]">
                   <View className=" flex-row items-center justify-center px-7  py-3">
                     <Text className="text-[#50165F] text-[18px] font-extrabold flex-1">
                       Saturday 25th June 2023
@@ -431,16 +435,17 @@ const FixtureScreen = () => {
                     </Text>
                   </View>
                 </View> */}
-              </ScrollView>
+                  </ScrollView>
+                </View>
+              </View>
             </View>
           </View>
-
         </ScrollView>
 
 
         {/* <BottomBar /> */}
-      </ImageBackground>
-    </SafeAreaView>
+      </ImageBackground >
+    </SafeAreaView >
 
   );
 };
