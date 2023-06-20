@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAppIntro } from '../../redux/slices/UserSlice';
 const data = ['BERUGA FC.', '', 'BERUGA FC.', 'BERUGA FC.'];
 
-const SubcriptionScreen = () => {
+const SubcriptionScreen = ({ navigation }) => {
   const [subcribeFee, SetSubcriptionFee] = useState(25000);
   const { } = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
@@ -126,7 +126,7 @@ const SubcriptionScreen = () => {
 
           </View>
         </View>
-        <TouchableOpacity onPress={onFinish}
+        <TouchableOpacity onPress={() => navigation.navigate('PhoneVerification')}
           className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-3 ">
           <Text className="text-white font-bold text-[15px]">Subcribe</Text>
         </TouchableOpacity>

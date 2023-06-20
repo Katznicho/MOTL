@@ -7,7 +7,7 @@ import ModalPopup from '../../components/Model';
 import { useNavigation } from '@react-navigation/native';
 
 const FollowScreen = () => {
-    // const navigation = useNavigation<any>();
+    const navigation = useNavigation<any>();
     const [modalVisible, setModalVisible] = useState(false);
     const [follow, setFollow] = useState(false)
     const [followText, setFolloText] = useState("Follow ")
@@ -163,7 +163,7 @@ const FollowScreen = () => {
             <Text className="text-white  font-semibold  text-[15px]">Get game updates, news, event alerts  on your </Text>
             <Text className="text-white  font-semibold  text-[15px]"> favourite teams</Text>
 
-            <TouchableOpacity onPress={openModal}
+            <TouchableOpacity onPress={navigation.navigate('SubscribeScreen')}
                 className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-[100px] ">
                 <Text className="text-white font-bold text-[21px]">Next </Text>
             </TouchableOpacity>

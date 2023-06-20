@@ -1,11 +1,22 @@
 // @ts-nocheck
 
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { ArrowLeftIcon } from 'react-native-heroicons/solid'
+import CurrencyModle from '../../components/CurrencyModle'
+import { useNavigation } from '@react-navigation/native'
 
 
-const PhoneVerification = () => {
+const PhoneVerification = ({ }) => {
+    const navigation = useNavigation<any>();
+    const [modalVisible, setModalVisible] = useState(false);
+    const openModal = () => {
+        setModalVisible(true);
+    };
+
+    const closeModal = () => {
+        setModalVisible(false);
+    };
     return (
         <View className=" items-center flex-1 relative" >
 
@@ -27,9 +38,11 @@ const PhoneVerification = () => {
 
                     </View>
 
-                    <TouchableOpacity className="bg-[#FF0000] w-[342px] h-[58px] rounded-[30px] items-center  justify-center mt-14 " >
+                    <TouchableOpacity onPress={() => navigation.navigate('EnterPinScreen')}
+                        className="bg-[#FF0000] w-[342px] h-[58px] rounded-[30px] items-center  justify-center mt-14 " >
                         <Text className="text-white font-bold text-[20px]">Continue</Text>
                     </TouchableOpacity>
+
                 </View>
             </View>
         </View>

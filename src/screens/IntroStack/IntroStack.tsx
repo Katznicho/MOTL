@@ -5,6 +5,9 @@ import WelcomeScreen from '../WeclomSecreens';
 import SubcriptionScreen from '../SubcriptionScreen/Subcription';
 import EnableLocationScreen from '../WeclomSecreens/EnableLocationScreen';
 import FollowScreen from '../WeclomSecreens/FollowScreen';
+import PhoneVerification from '../WeclomSecreens/PhoneVerification';
+import PaymentScreen from '../PaymentScreen';
+import EnterPin from '../EnterPin';
 const Stack = createStackNavigator();
 const IntroStack = () => {
     return (
@@ -31,8 +34,24 @@ const IntroStack = () => {
                 name='FollowScreen'
                 component={FollowScreen}
             />
+            <Stack.Screen
+                name='PhoneVerification'
+                component={PhoneVerification}
+            />
+            <Stack.Screen
+                name='EnterPinScreen'
+                component={EnterPin}
+            />
+            <Stack.Screen
+                name='PaymentScreen'
+                component={PaymentScreen}
+            />
+
+
+
 
         </Stack.Navigator>
+
     )
 }
 
