@@ -30,6 +30,7 @@ const IntroStack = () => {
                 name='LocationScreen'
                 component={EnableLocationScreen}
             />
+
             <Stack.Screen
                 name='FollowScreen'
                 component={FollowScreen}
