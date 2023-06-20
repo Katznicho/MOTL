@@ -13,6 +13,7 @@ const EnableLocationScreen = () => {
     //get current location
     const getLocation = () => {
         //checking if location permission is granted
+
         if (location) {
             //get current location
             Geolocation.getCurrentPosition(
@@ -66,6 +67,7 @@ const EnableLocationScreen = () => {
                         //Setting Longitude state
                         setCurrentLongitude(currentLongitude);
 
+
                         //Setting Longitude state
                         setCurrentLongitude(currentLatitude);
                     }
@@ -80,7 +82,9 @@ const EnableLocationScreen = () => {
     };
 
 
+
     //check for location permission
+
     async function checkLocationPermission() {
         try {
             const granted = await PermissionsAndroid.check(
@@ -147,7 +151,7 @@ const EnableLocationScreen = () => {
                 />
 
 
-            </ImageBackground></>
+            </ImageBackground ></>
     )
 }
 
