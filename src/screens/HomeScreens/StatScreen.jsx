@@ -18,7 +18,7 @@ const StatScreen = () => {
           <View className="bg-[#bf4c91] w-[370px] h-[35px] rounded-md space-x-2 border-b  border-[#FF0000] items-center flex-row px-2">
             <Text style={styles.fontstyletop}> TEAM</Text>
 
-            <View className="flex-row items-center mr-6">
+            <View className="flex-row items-center mr-2">
               <Image source={require('../../assets/livecon.png')} />
               <Text
                 style={{
@@ -41,7 +41,7 @@ const StatScreen = () => {
             </View>
           </View>
           <View className="  items-center flex-row px-2    mt-2">
-            <View className="flex-row items-center space-x-1 mr-2">
+            <View className="flex-row items-center justify-center  mr-2">
               <Text style={styles.fontstyleptstotal}>1</Text>
               <Image
                 source={require('../../assets/burenga.png')}
@@ -49,7 +49,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-2">
+            <View className="flex-row items-center space-x-1">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -69,7 +69,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-2">
+            <View className="flex-row items-center space-x-1">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -90,7 +90,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-2">
+            <View className="flex-row items-center space-x-1">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -110,7 +110,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-2">
+            <View className="flex-row items-center space-x-1">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -129,7 +129,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-2">
+            <View className="flex-row items-center space-x-1">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>

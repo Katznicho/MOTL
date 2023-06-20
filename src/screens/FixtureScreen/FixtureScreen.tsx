@@ -44,7 +44,7 @@ const FixtureScreen = () => {
             <View className="h-full w-full bg-[#c18286] mt-5 ">
               <ScrollView>
                 <View className="bg-[#B66194]   w-82 ml-3 m-3 mr-3 rounded-[10px]">
-                  <View className=" flex-row items-center  px-7  py-3">
+                  <View className=" flex-row items-center  px-10  py-3">
                     <Text style={styles.dateText}>
                       Today 25th June 2023
                     </Text>
