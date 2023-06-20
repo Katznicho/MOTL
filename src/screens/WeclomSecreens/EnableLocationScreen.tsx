@@ -1,9 +1,105 @@
 // @ts-nocheck
-import { View, Text, ImageBackground, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ImageBackground, TouchableOpacity, Image, Alert } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
+import { PermissionsAndroid } from 'react-native';
+import Geolocation from 'react-native-geolocation-service';
 
 const EnableLocationScreen = () => {
+
+    const [location, setLocation] = React.useState(false);
+    const [currentLongitude, setCurrentLongitude] = React.useState('...');
+
+    //get current location
+    const getLocation = () => {
+         //checking if location permission is granted
+        if (location) {
+            //get current location
+            Geolocation.getCurrentPosition(
+                //Will give you the current location
+                (position) => {
+                    //getting the Longitude from the location json
+                    const currentLongitude = JSON.stringify(position.coords.longitude);
+
+                    //getting the Latitude from the location json
+                    const currentLatitude = JSON.stringify(position.coords.latitude);
+
+                    //Setting Longitude state
+                    setCurrentLongitude(currentLongitude);
+
+                    //Setting Longitude state
+                    setCurrentLongitude(currentLatitude);
+                }
+            );
+        } else {
+            //if location permission is not granted
+            //ask for permission
+            askForLocationPermission();
+        }
+    }
+
+    //request for android location permission
+    const askForLocationPermission = async () => {
+        try {
+            const granted = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                {
+                    title: 'Location Permission',
+                    message: 'This app needs access to your location',
+                    buttonNeutral: 'Ask Me Later',
+                    buttonNegative: 'Cancel',
+                    buttonPositive: 'OK',
+                },
+            );
+            if (granted == PermissionsAndroid.RESULTS.GRANTED) {
+                //console.log('You can use the location');
+                //setLocation(true);
+                Geolocation.getCurrentPosition(
+                    //Will give you the current location
+                    (position) => {
+                        //getting the Longitude from the location json
+                        const currentLongitude = JSON.stringify(position.coords.longitude);
+    
+                        //getting the Latitude from the location json
+                        const currentLatitude = JSON.stringify(position.coords.latitude);
+    
+                        //Setting Longitude state
+                        setCurrentLongitude(currentLongitude);
+    
+                        //Setting Longitude state
+                        setCurrentLongitude(currentLatitude);
+                    }
+                );
+            } else {
+                //console.log('Location permission denied');
+                Alert.alert("Location Permission Denied");
+            }
+        } catch (err) {
+            console.warn(err);
+        }
+    };
+
+
+     //check for location permission
+    async function checkLocationPermission() {
+        try {
+            const granted = await PermissionsAndroid.check(
+                PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+            );
+            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                //console.log('You can use the location');
+                setLocation(true);
+            } else {
+                //console.log('Location permission denied');
+                askForLocationPermission();
+            }
+        } catch (err) {
+            console.warn(err);
+        }
+    }
+
+
+    //request for ios location permission
     const navigation = useNavigation<any>();
     return (
         <>
@@ -34,7 +130,11 @@ const EnableLocationScreen = () => {
                 </View>
 
 
-                <TouchableOpacity onPress={() => navigation.navigate('FollowScreen')}
+                <TouchableOpacity onPress={() =>{
+                    checkLocationPermission();
+                    //navigation.navigate('FollowScreen')
+
+                } }
                     className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-[100px] ">
                     <Text className="text-white font-bold text-[21px]">Next </Text>
                 </TouchableOpacity>
