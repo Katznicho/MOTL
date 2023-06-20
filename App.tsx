@@ -17,6 +17,9 @@ import LandingScreen from './src/screens/SplashScreens/SplahScreen';
 import SplashScreen from 'react-native-splash-screen'
 import EnableLocationScreen from './src/screens/WeclomSecreens/EnableLocationScreen';
 import FollowScreen from './src/screens/WeclomSecreens/FollowScreen';
+import PhoneVerification from './src/screens/WeclomSecreens/PhoneVerification';
+import PaymentScreen from './src/screens/PaymentScreen';
+import EnterPin from './src/screens/EnterPin';
 
 
 export default function App() {
