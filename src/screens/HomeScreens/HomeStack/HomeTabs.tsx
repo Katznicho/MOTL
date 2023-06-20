@@ -24,6 +24,7 @@ const HomeTabs = () => {
           borderBottomWidth: 0, // Remove the bottom border
           borderTopWidth: 0,
           borderColor: theme.colors.primary,
+          paddingHorizontal:40
         },
         tabBarAndroidRipple: { borderless: true },
         tabBarActiveTintColor: theme.colors.white,
@@ -36,13 +37,14 @@ const HomeTabs = () => {
           lineHeight: 20,
           color: theme.colors.white,
           alignSelf: 'center',
+          flex:1
 
         },
 
         tabBarIndicatorStyle: {
           backgroundColor: theme.colors.red,
           height: 4,
-          marginHorizontal: 15,
+          marginHorizontal: 35,
         },
         tabBarPressColor: theme.colors.primary,
         tabBarScrollEnabled: true,
@@ -55,11 +57,11 @@ const HomeTabs = () => {
     >
       <Tab.Screen
         name="POSTS"
-        component={BuzzScreen}
+        component={HomeScreen}
       />
-      {/* <Tab.Screen 
+      <Tab.Screen 
       name="BUZZ" 
-      component={HomeScreen}
+      component={BuzzScreen}
        options={{
         tabBarLabel: 'BUZZ',
         tabBarAccessibilityLabel: 'BUZZ',
@@ -67,7 +69,7 @@ const HomeTabs = () => {
         
         
        }}
-       /> */}
+       />
     </Tab.Navigator>
   );
 };

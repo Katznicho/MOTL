@@ -21,9 +21,15 @@ const PostsCard = () => {
                 </View>
                 <Text className="text-white text-[13px] px-3 pt-2"> In the groooooove</Text>
                 <Text className="text-[13px] text-[#0060D0] px-3">@MOTL <Text className=" text-white"> let’s go.</Text> </Text>
-                <View className="w-80 h-[236px] bg-gray-500 rounded-[10px] items-center m-5">
+                <View className="w-72 h-[236px] bg-gray-500 rounded-[10px] items-center m-5">
 
-                    <Image source={require('../../assets/imagecenter.png')} className="w-80  h-[236px]" />
+                    <Image
+                        source={require('../../assets/imagecenter.png')}
+                        className="w-72  h-[236px]"
+                        resizeMode='cover'
+                        resizeMethod='resize'
+
+                    />
                 </View>
                 <Text className="text-white  text-xsm pl-3 opacity-60"> 7:30 PM Dec 27, 2022</Text>
                 <View className="border-[0.3px] px-3 border-white w-82 m-1"></View>

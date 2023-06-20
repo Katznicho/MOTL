@@ -1,19 +1,22 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeTabs from './HomeTabs';
+
 import TopBar from '../../../components/AppBars/TopBar';
 import { theme } from '../../../theme/theme';
+import StatTabs from './StatTabs';
+
 
 const Stack = createStackNavigator();
 
-const HomeStack = () => {
+const StatStack = () => {
   return (
     <Stack.Navigator
+      initialRouteName='StatScreen'
     >
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeTabs}
+        name="StatScreen"
+        component={StatTabs}
         options={{
           header: props => (
             <TopBar
@@ -22,17 +25,12 @@ const HomeStack = () => {
               title={"MOTL"}
 
               titleStyle={{
-                color: `${theme.colors.textColor}`, 
-                fontSize: 28,
-                width: 44,
-                textShadowColor: "rgba(0, 0, 0, 0.5)",
-                textShadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                textShadowRadius: 4,
-                textAlign: "left",
+                color: `${theme.colors.textColor}`,
+                marginLeft: 10,
                 fontFamily: "LeagueGothic-Regular",
+                fontStyle: 'normal',
+                fontSize: 28,
+                lineHeight: 34,
 
               }}
               subtitleStyle={{
@@ -49,6 +47,6 @@ const HomeStack = () => {
   )
 }
 
-export default HomeStack
+export default StatStack
 
 const styles = StyleSheet.create({})

@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const FrameScreen = () => {
+const Goals = () => {
   return (
     <View>
+      <Text>Goals</Text>
     </View>
   )
 }
 
-export default FrameScreen
+export default Goals
 
 const styles = StyleSheet.create({})
