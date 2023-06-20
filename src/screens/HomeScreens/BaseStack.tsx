@@ -5,16 +5,12 @@ import { Avatar, useTheme } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './HomeScreen';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Enypto from 'react-native-vector-icons/Entypo';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { StyleSheet, Image, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeStack from './HomeStack/HomeStack';
-import FrameScreen from './FrameScreen';
 import CalendarStack from './CalendarStack/CalendarStack';
-import Posts from './Post';
+import StatStack from './StatStack/StatStack';
+import ShopStack from './ShopStack/ShopStack';
 
 
 
@@ -113,14 +109,10 @@ const BaseStack = () => {
         )
       }}
 
-
-
-
     />
-
     <Tab.Screen
       name="MOTL"
-      component={FrameScreen}
+      component={HomeStack}
       options={{
         tabBarLabel: 'MOTL',
         tabBarAccessibilityLabel: 'MOTL',
@@ -164,7 +156,7 @@ const BaseStack = () => {
 
     <Tab.Screen
       name="Shop"
-      component={HomeScreen}
+      component={ShopStack}
       options={{
         tabBarLabel: 'Shop',
         tabBarAccessibilityLabel: 'Shop',
@@ -185,7 +177,7 @@ const BaseStack = () => {
 
     <Tab.Screen
       name="Stats"
-      component={Posts}
+      component={StatStack}
       options={{
         tabBarLabel: 'Stats',
         tabBarAccessibilityLabel: 'Stats',

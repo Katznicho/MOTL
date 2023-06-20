@@ -1,13 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const FrameScreen = () => {
+const AllStats = () => {
   return (
     <View>
+      <Text>AllStats</Text>
     </View>
   )
 }
 
-export default FrameScreen
+export default AllStats
 
 const styles = StyleSheet.create({})
