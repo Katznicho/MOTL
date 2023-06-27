@@ -6,7 +6,15 @@ module.exports = {
     './src/components/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        borderRadius: {
+          custom: '10px 10px 0px 0px',
+        },
+      },
+    },
   },
   plugins: [],
 };

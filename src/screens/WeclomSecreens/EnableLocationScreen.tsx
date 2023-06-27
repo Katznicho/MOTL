@@ -12,7 +12,7 @@ const EnableLocationScreen = () => {
 
     //get current location
     const getLocation = () => {
-         //checking if location permission is granted
+        //checking if location permission is granted
         if (location) {
             //get current location
             Geolocation.getCurrentPosition(
@@ -59,13 +59,13 @@ const EnableLocationScreen = () => {
                     (position) => {
                         //getting the Longitude from the location json
                         const currentLongitude = JSON.stringify(position.coords.longitude);
-    
+
                         //getting the Latitude from the location json
                         const currentLatitude = JSON.stringify(position.coords.latitude);
-    
+
                         //Setting Longitude state
                         setCurrentLongitude(currentLongitude);
-    
+
                         //Setting Longitude state
                         setCurrentLongitude(currentLatitude);
                     }
@@ -80,7 +80,7 @@ const EnableLocationScreen = () => {
     };
 
 
-     //check for location permission
+    //check for location permission
     async function checkLocationPermission() {
         try {
             const granted = await PermissionsAndroid.check(
@@ -97,8 +97,11 @@ const EnableLocationScreen = () => {
             console.warn(err);
         }
     }
+    const enableLcation = () => {
+        checkLocationPermission();
+        navigation.navigate('FollowScreen')
 
-
+    }
     //request for ios location permission
     const navigation = useNavigation<any>();
     return (
@@ -130,11 +133,11 @@ const EnableLocationScreen = () => {
                 </View>
 
 
-                <TouchableOpacity onPress={() =>{
-                    checkLocationPermission();
-                    //navigation.navigate('FollowScreen')
+                <TouchableOpacity onPress={
+                    enableLcation
 
-                } }
+
+                }
                     className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-[100px] ">
                     <Text className="text-white font-bold text-[21px]">Next </Text>
                 </TouchableOpacity>
