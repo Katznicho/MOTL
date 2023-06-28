@@ -3,6 +3,7 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { theme } from '../../../theme/theme';
 import SubcriptionScreen from '../../SubcriptionScreen/Subcription';
+import Shop from '../../Shop';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -24,7 +25,7 @@ const ShopTabs = () => {
                     borderTopWidth: 0,
                     borderColor: theme.colors.primary,
                     width: 'auto',
-                    paddingHorizontal:40
+                    paddingHorizontal: 40
                 },
                 tabBarAndroidRipple: { borderless: true },
                 tabBarActiveTintColor: theme.colors.white,
@@ -36,7 +37,6 @@ const ShopTabs = () => {
                     fontStyle: 'normal',
                     lineHeight: 20,
                     color: theme.colors.white,
-                    
                     width: 'auto',
                     justifyContent: 'center', // Add this line to center the tabs
                 },
@@ -45,7 +45,6 @@ const ShopTabs = () => {
                     backgroundColor: theme.colors.red,
                     height: 4,
                     marginHorizontal: 50,
-                
                 },
                 tabBarPressColor: theme.colors.primary,
                 tabBarScrollEnabled: true,
@@ -54,7 +53,7 @@ const ShopTabs = () => {
                 tabBarItemStyle: {
                     width: 'auto',
                     justifyContent: 'center', // Add this line to center the tabs
-                    alignItems:"center"
+                    alignItems: "center"
                 },
                 tabBarContentContainerStyle: {
                     alignContent: "center",
@@ -69,7 +68,7 @@ const ShopTabs = () => {
         >
             <Tab.Screen
                 name="SUBSCRIPTIONSSTAB"
-                component={SubcriptionScreen}
+                component={Shop}
                 options={{
                     tabBarLabel: 'SUBSCRIPTIONS',
                     tabBarAccessibilityLabel: 'SUBSCRIPTIONS',
@@ -78,7 +77,7 @@ const ShopTabs = () => {
             />
             <Tab.Screen
                 name="MERCHANDISETAB"
-                component={SubcriptionScreen}
+                component={Shop}
                 options={{
                     tabBarLabel: 'MERCHANDISE',
                     tabBarAccessibilityLabel: 'MERCHANDISE',

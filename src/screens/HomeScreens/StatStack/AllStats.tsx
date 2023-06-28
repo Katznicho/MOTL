@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import StatScreen from '../StatScreen'
 
 const AllStats = () => {
   return (
     <View>
-      <Text>AllStats</Text>
+      <StatScreen />
     </View>
   )
 }

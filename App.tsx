@@ -20,6 +20,8 @@ import FollowScreen from './src/screens/WeclomSecreens/FollowScreen';
 import PhoneVerification from './src/screens/WeclomSecreens/PhoneVerification';
 import PaymentScreen from './src/screens/PaymentScreen';
 import EnterPin from './src/screens/EnterPin';
+import BuzzScreen from './src/screens/Buzz';
+import NewsFetcher from './NewsFetcher';
 
 
 export default function App() {

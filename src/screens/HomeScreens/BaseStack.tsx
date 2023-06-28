@@ -181,10 +181,14 @@ const BaseStack = () => {
       options={{
         tabBarLabel: 'Stats',
         tabBarAccessibilityLabel: 'Stats',
-        tabBarIcon: ({ color }: any) => (
+        tabBarIcon: ({ color, focused }: any) => !focused ? (
           <Image source={require("../../assets/stat.png")}
           />
-        ),
+        ) : (
+          <Image source={require("../../assets/statsiconone..png")}
+          />
+
+        )
       }}
     />
   </Tab.Navigator>

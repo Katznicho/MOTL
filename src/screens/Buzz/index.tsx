@@ -1,9 +1,15 @@
 // @ts-nocheck
 import { View, Text, ImageBackground, Image, TouchableOpacity, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import PostsCard from '../../components/Posts/PostsCard'
+import axios from 'axios';
+import CryptoJS from 'crypto-js';
+import config from '../../../config';
+
+
 
 const BuzzScreen = () => {
+
     return (
         <ImageBackground source={require("../../assets/background.png")} className=" h-full">
             <ScrollView>
@@ -31,8 +37,8 @@ const BuzzScreen = () => {
 
                 <View className="bg-[#eb8199]  h-full w-full mt-3">
                     <PostsCard />
-                    <PostsCard />
-                    <PostsCard />
+                    {/* <PostsCard />
+                    <PostsCard /> */}
                 </View>
 
 

@@ -29,16 +29,16 @@ const SubcriptionScreen = ({ navigation }) => {
   }
   return (
     <View className=" bg-[#fe7878] h-full w-full">
-      {/* <View className=" flex-row items-center justify-between m-4">
-        <TouchableOpacity>
+      <View className=" flex-row items-center justify-between m-4">
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <ArrowLeftIcon className=" " color="#50165F" />
         </TouchableOpacity>
 
         <Image source={require('../../assets/circles.png')} />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation('Home')}>
           <Text className=" text-white">SKIP</Text>
         </TouchableOpacity>
-      </View> */}
+      </View>
       <View className="items-center text-[18px]">
         <Text className="text-white text-[20px] font-bold">MEMBERSHIP</Text>
         <Text className="text-white text-[20px] font-bold">
