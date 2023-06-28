@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 //import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { theme } from '../../theme/theme';
 import { Avatar, useTheme } from 'react-native-paper';
@@ -11,6 +11,7 @@ import HomeStack from './HomeStack/HomeStack';
 import CalendarStack from './CalendarStack/CalendarStack';
 import StatStack from './StatStack/StatStack';
 import ShopStack from './ShopStack/ShopStack';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -26,6 +27,17 @@ const BaseStack = () => {
   paper_theme.colors.error = theme.colors.buttonColor;
 
   const { appIntro, isLoggedIn, user } = useSelector((state: RootState) => state.user);
+
+  const navigation = useNavigation<any>();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('tabPress', (e: any) => {
+      //console.log(e.target);
+      console.log("pressed")
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   return (<Tab.Navigator
     initialRouteName="Home"
@@ -60,11 +72,9 @@ const BaseStack = () => {
           marginBottom: 0,
         },
 
-
-
-
       }
     }
+
   >
 
     <Tab.Screen
@@ -113,6 +123,13 @@ const BaseStack = () => {
     <Tab.Screen
       name="MOTL"
       component={HomeStack}
+      listeners={{
+        tabPress: e => {
+          // Prevent default action
+          e.preventDefault();
+        },
+      }
+      }
       options={{
         tabBarLabel: 'MOTL',
         tabBarAccessibilityLabel: 'MOTL',
@@ -147,6 +164,9 @@ const BaseStack = () => {
           </View>
 
         ),
+
+
+
 
       }}
     />

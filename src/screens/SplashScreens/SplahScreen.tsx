@@ -17,14 +17,14 @@ const SplahScreen = () => {
   useEffect(() => {
     Animated.timing(opacity, {
       toValue: 1,
-      duration: 1000,
+      duration: 500,
       useNativeDriver: true,
     }).start();
 
     // Simulating initialization progress
     const progressInterval = setInterval(() => {
       setProgress((prevProgress) => {
-        const newProgress = prevProgress + 0.1;
+        const newProgress = prevProgress + 0.5;
         if (newProgress >= 1) {
           clearInterval(progressInterval);
           // Navigate to your app's main screen or next component
@@ -32,7 +32,7 @@ const SplahScreen = () => {
         }
         return newProgress;
       });
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(progressInterval);
   }, []);

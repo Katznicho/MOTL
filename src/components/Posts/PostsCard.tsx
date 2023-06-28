@@ -86,7 +86,7 @@ const PostsCard = () => {
                     }
                 );
                 const data = await response.json();
-                console.log(response)
+                //console.log(response)
                 setTweets(data);
             } catch (error) {
                 console.log(error);
