@@ -3,7 +3,6 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { ArrowLeftIcon } from 'react-native-heroicons/solid'
-import CurrencyModle from '../../components/CurrencyModle'
 import { useNavigation } from '@react-navigation/native'
 
 
@@ -20,7 +19,7 @@ const PhoneVerification = ({ }) => {
     return (
         <View className=" items-center flex-1 relative" >
 
-            <View className="m-5 absolute top-0 left-0"><ArrowLeftIcon className="m-5 mt-9" color="black" size={30} /></View>
+            <View className="m-5 absolute top-0 left-0"><ArrowLeftIcon className="m-5 mt-9" color="black" size={30} onPress={() => navigation.goBack()} /></View>
 
             <View >
                 <View className="mt-[100px] items-center">

@@ -1,19 +1,19 @@
 // @ts-nocheck
-import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
 const TweetCard = ({ tweet }) => {
     const user = tweet.user
     const profile_name = user.name
     const profile_image_url = user.profile_image_url_https
     return (
-        <View className=" rounded-[10px] w-82 h-[600px] shadow-lg bg-[#d35fa1]  space-y-4 m-4">
+        <View className=" rounded-[10px] w-82 h-[600px] shadow-lg bg-[#d35fa1]  space-y-4 m-4 ">
             <View className="flex-row items-center px-3 pt-3">
 
                 <View className="w-[62px] h-[62px] bg-slate-400  rounded-full mr-2">
                     <Image source={{ uri: profile_image_url }} className=" w-[62px] h-[62px] rounded-full mr-2" />
                 </View>
                 <View className=" flex-1">
-                    <Text className="font-bold text-black">{profile_name}</Text>
+                    <Text style={styles.textFonnts}>{profile_name}</Text>
                     <Text className="text-white ">@{tweet.text}. <Text className="text-[#0060D0]">Follow</Text></Text>
                 </View>
                 <TouchableOpacity ><Image source={require('../../assets/twitter.png')} className="w-[27.58px] h-[21.24px] " /></TouchableOpacity>
@@ -21,11 +21,11 @@ const TweetCard = ({ tweet }) => {
             </View>
             <Text className="text-white text-[13px] px-3 pt-2"> In the groooooove</Text>
             <Text className="text-[13px] text-[#0060D0] px-3">@MOTL <Text className=" text-white"> let’s go.</Text> </Text>
-            <View className="w-72 h-[236px] bg-gray-500 rounded-[10px] items-center m-5">
+            <View className="w-80 h-[236px] bg-gray-500 rounded-[10px] items-center justify-center  m-5 ">
 
                 {tweet.entities.media && (<Image
                     source={{ uri: tweet.entities.media[0].media_url_https }}
-                    className="w-72  h-[236px] rounded-[10px]"
+                    className="w-80  h-[236px] rounded-[10px]"
                     resizeMode='cover'
                     resizeMethod='resize'
 
@@ -97,7 +97,7 @@ const PostsCard = () => {
 
 
     return (
-        <View>
+        <View >
 
             {tweets.map((tweet) => (
                 <TweetCard key={tweet.id} tweet={tweet} />
@@ -109,3 +109,15 @@ const PostsCard = () => {
 }
 
 export default PostsCard
+
+
+const styles = StyleSheet.create({
+    textFonnts: {
+        fontFamily: "Poppins-Black",
+        color: "black",
+        fontSize: 15
+
+    },
+
+
+})

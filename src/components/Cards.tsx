@@ -1,9 +1,10 @@
 // @ts-nocheck
-import { View, Text, Image, ImageBackground, TouchableOpacity, TextInput, VirtualizedList } from 'react-native'
+import { View, Text, Image, ImageBackground, TouchableOpacity, TextInput, VirtualizedList, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import Card from './Card'
 import SecondCard from './SecondCard'
+import { HeartIcon, ChatBubbleOvalLeftEllipsisIcon } from 'react-native-heroicons/outline'
 
 
 const Cards = () => {
@@ -47,22 +48,22 @@ const Cards = () => {
                 <View >
 
                     <View className="flex-row  justify-between px-5 p-5 items-center">
-                        <Text className="text-[#511760] font-extrabold text-[24px]"> WHAT’S LATEST</Text>
+                        <Text style={styles.latestText}> WHAT’S LATEST</Text>
                         <View className=" border rounded-full w-[37px] h-[37px] items-center justify-center">
                             <Image source={require("../assets/icon.png")} className="" /></View>
 
 
 
                     </View>
-                    <View className='w-[350px]  items-center h-[500px] justify-center  rounded-t-[30px]'>
-                        <View className='items-center relative w-[350px] object-contain  h-[400px]   rounded-t-[10px]'>
-                            <Image source={require("../assets/centerimg.png")} className="items-center relative w-[350px] object-contain  h-[400px]   rounded-t-[10px] flex-1" />
-                            <Text className="text-white font-extrabold text-[21px] absolute  bottom-0 ">
+                    <View className='w-[370px]  items-center h-[500px] justify-center  rounded-t-[30px]'>
+                        <View className='items-center relative w-[370px]   h-[400px]   rounded-t-[10px]'>
+                            <Image source={require("../assets/centerimg.png")} className="items-center relative    w-[380px]   h-[400px]   rounded-t-[10px] flex-1" />
+                            <Text style={styles.manDaText}>
                                 MATCH OF THE DAY GOES TO BERUGA FC Vs OLYMPIACOS FC.</Text>
                         </View>
 
 
-                        <View className=' w-[350px] h-32 bg-white  rounded-b-[10px]'>
+                        <View className=' w-[380px]  h-32 bg-white  rounded-b-[10px]'>
 
                             <View className='flex-row  items-center px-3 p-3'>
                                 <View className='flex-row space-x-[-25px] items-center'>
@@ -86,13 +87,15 @@ const Cards = () => {
                                     {!isIncrementing ? (
                                         <Image source={require('../assets/likeicon.png')} className='w-10 h-7 px-3' />
 
-                                    ) : (<Image source={require('../assets/likeicon2.png')} className='w-10 h-7 ' />)}
+                                        // <Image source={require('../assets/likeicon2.png')} className='w-10 h-7 ' />
+
+                                    ) : (<HeartIcon color='gray' size={32} />)}
 
 
                                 </TouchableOpacity>
                                 <Text className='text-black '>Like</Text>
                                 <View className='items-center flex-row  space-x-2 flex-1'>
-                                    <Image source={require('../assets/commenticon.png')} className='h-7 w-10 bg-black placeholder:bg-red-400' />
+                                    <ChatBubbleOvalLeftEllipsisIcon color='gray' size={32} className='h-7 w-10 bg-black placeholder:bg-red-400' />
                                     <TextInput placeholder='commenet'
                                         maxLength={15}
 
@@ -101,31 +104,32 @@ const Cards = () => {
 
                                 </View>
                                 <TouchableOpacity className='flex-row items-center space-x-1'>
-                                    <Image source={require('../assets/share2.png')} className='w-11 h-6 ' />
+                                    <Image source={require('../assets/share2.png')} className='w-7 h-6 ' />
                                     <Text className='text-black text-[16px]'> share</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
 
                     </View>
-                    <View className='h-[500px] relative w-[350px]  bg-gray-500 rounded-[10px] mt-5 items-center'>
-                        <Image source={require('../assets/centerimg.png')} className=' h-[500px] w-[350px] rounded-[10px] ' />
-
-
-                        <Text className='text-white font-bold text-[33px] absolute bottom-28 left-4'>PREDICT AND WIN BREUGA FC VS OLYMPIACOS FC.</Text>
-                        <Text className='text-white font-bold text-[30xp] bottom-[90px] absolute left-4 font-poppins'>20:40 Remaining </Text>
-                        <TouchableOpacity className='border-4 border-white w-60 h-[66px] left-4 rounded-[30px] items-center justify-center bottom-4 absolute'>
-                            <Text className='text-white font-bold text-[25px] '>Predict Now!</Text>
-                        </TouchableOpacity>
-
-
-                    </View>
 
 
                 </View>
+                <View className='h-[500px] relative w-[380px]  bg-gray-500 rounded-[10px] mt-5 items-center'>
+                    <Image source={require('../assets/centerimg.png')} className=' h-[500px] w-[380px] rounded-[10px] ' />
+
+
+                    <Text className='text-white font-bold text-[33px] absolute bottom-28 left-4'>PREDICT AND WIN BREUGA FC VS OLYMPIACOS FC.</Text>
+                    <Text className='text-white font-bold text-[30xp] bottom-[90px] absolute left-4 font-poppins'>20:40 Remaining </Text>
+                    <TouchableOpacity className='border-4 border-white w-60 h-[66px] left-4 rounded-[30px] items-center justify-center bottom-4 absolute'>
+                        <Text className='text-white font-bold text-[25px] '>Predict Now!</Text>
+                    </TouchableOpacity>
+
+
+                </View>
+
             </View>
 
-            <View className='w- bg-[#eb7e96]  h-[579px] items-center relative   mt-3'>
+            <View className=' bg-[#eb7e96]  h-[579px] items-center relative   mt-3'>
 
                 <View className=" PX-5 p-5  flex-row space-x-11">
                     <Text className="text-[#511760] font-extrabold text-[27px]">MUST SEE MOMENTS </Text>
@@ -172,4 +176,22 @@ const Cards = () => {
     )
 }
 
+
+const styles = StyleSheet.create({
+    manDaText: {
+        fontFamily: "LeagueGothic-Regular",
+        fontSize: 28,
+        color: 'white',
+        position: 'absolute',
+        bottom: 0
+
+    },
+    latestText: {
+        fontFamily: "LeagueGothic-Regular",
+        fontSize: 30,
+        color: '#511760'
+
+
+    }
+})
 export default Cards

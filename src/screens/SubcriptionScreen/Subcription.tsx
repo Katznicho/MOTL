@@ -35,7 +35,7 @@ const SubcriptionScreen = ({ navigation }) => {
         </TouchableOpacity>
 
         <Image source={require('../../assets/circles.png')} />
-        <TouchableOpacity onPress={() => navigation('Home')}>
+        <TouchableOpacity onPress={() => navigation.navigate('PaymentScreen')}>
           <Text className=" text-white">SKIP</Text>
         </TouchableOpacity>
       </View>

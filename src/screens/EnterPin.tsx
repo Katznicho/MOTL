@@ -22,7 +22,7 @@ export default function EnterPin() {
     return (
         <View className="items-center justify-center  relative  ">
             <TouchableOpacity className="absolute left-5 top-5  ">
-                <ArrowLeftIcon className="" color='black' size={30} /></TouchableOpacity>
+                <ArrowLeftIcon className="" color='black' size={30} onPress={() => navigation.goBack()} /></TouchableOpacity>
 
             <View className='justify-center items-center top-[184px]' >
                 <Text className='text-black font-bold text-[30px]'>Enter your code</Text>
