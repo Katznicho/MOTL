@@ -16,6 +16,7 @@ const HomeScreen = () => {
       <ImageBackground source={require("../../assets/background.png")} className=" h-full  ">
         <ScrollView className=''>
           <Cards />
+            
         </ScrollView>
       </ImageBackground>
 

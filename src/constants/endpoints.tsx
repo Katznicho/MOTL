@@ -32,7 +32,10 @@ export const GET_TRAINER_RATINGS:string = "/trainer/rating"
 export const GET_WORKOUT_CATEROGIES:string = "/client/workouts";
 
 //firebase collections
+//firebase collections
 export const USER_COLLECTION:string = "users";
+export const USER_STATUS:string = "statuses";
+export const USER_POSTS:string = "posts";
 
 //firebase storage
 export const PROFILE_STORAGE:string  = "profile/images"

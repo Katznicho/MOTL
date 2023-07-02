@@ -10,18 +10,10 @@ import { LogBox, View, Text } from 'react-native';
 import { Button } from 'react-native-paper';
 import { theme } from './src/theme/theme';
 import { generalstyles } from './src/generalstyles/generalstyles';
-import BaseScreen from './src/screens/BaseScreen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import WelcomeScreen from './src/screens/WeclomSecreens';
 import LandingScreen from './src/screens/SplashScreens/SplahScreen';
 import SplashScreen from 'react-native-splash-screen'
-import EnableLocationScreen from './src/screens/WeclomSecreens/EnableLocationScreen';
-import FollowScreen from './src/screens/WeclomSecreens/FollowScreen';
-import PhoneVerification from './src/screens/WeclomSecreens/PhoneVerification';
-import PaymentScreen from './src/screens/PaymentScreen';
-import EnterPin from './src/screens/EnterPin';
-import BuzzScreen from './src/screens/Buzz';
-import NewsFetcher from './NewsFetcher';
+
 
 
 export default function App() {
