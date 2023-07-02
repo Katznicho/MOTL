@@ -6,7 +6,11 @@ const TweetCard = ({ tweet }) => {
     const profile_name = user.name
     const profile_image_url = user.profile_image_url_https
     return (
+<<<<<<< HEAD
         <View className=" rounded-[10px] w-82 h-[650px] shadow-lg bg-[#d35fa1]  space-y-4 m-4  ">
+=======
+        <View className=" rounded-[10px] w-82 h-[600px] shadow-lg bg-[#d35fa1]  space-y-4 m-4 ">
+>>>>>>> ad124c1 (lastupdates)
             <View className="flex-row items-center px-3 pt-3">
 
                 <View className="w-[62px] h-[62px] bg-slate-400  rounded-full mr-2">
@@ -21,11 +25,19 @@ const TweetCard = ({ tweet }) => {
             </View>
             <Text className="text-white text-[13px] px-3 pt-2"> In the groooooove</Text>
             <Text className="text-[13px] text-[#0060D0] px-3">@MOTL <Text className=" text-white"> let’s go.</Text> </Text>
+<<<<<<< HEAD
             <View className="w-80 h-[236px] bg-gray-500 rounded-[10px] items-center justify-center  ml-7 ">
 
                 {tweet.entities.media && (<Image
                     source={{ uri: tweet.entities.media[0].media_url_https }}
                     className="w-[360px]  h-[236px] rounded-[10px]"
+=======
+            <View className="w-80 h-[236px] bg-gray-500 rounded-[10px] items-center justify-center  m-5 ">
+
+                {tweet.entities.media && (<Image
+                    source={{ uri: tweet.entities.media[0].media_url_https }}
+                    className="w-80  h-[236px] rounded-[10px]"
+>>>>>>> ad124c1 (lastupdates)
                     resizeMode='cover'
                     resizeMethod='resize'
 
