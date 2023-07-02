@@ -26,17 +26,8 @@ export default function Shop() {
 
     return (
         <View className=" bg-[#fe7878] h-full w-full">
-            {/* <View className=" flex-row items-center justify-between m-4">
-                <TouchableOpacity>
-                    <ArrowLeftIcon className=" " color="#50165F" />
-                </TouchableOpacity>
 
-                <Image source={require('../../assets/circles.png')} />
-                <TouchableOpacity>
-                    <Text className=" text-white">SKIP</Text>
-                </TouchableOpacity>
-            </View> */}
-            <ScrollView>
+            <ScrollView className=' h-full'>
                 <View className="items-center text-[18px]">
                     <Text className="text-white text-[20px] font-bold">MEMBERSHIP</Text>
                     <Text className="text-white text-[20px] font-bold">

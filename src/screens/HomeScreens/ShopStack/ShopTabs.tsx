@@ -3,6 +3,7 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { theme } from '../../../theme/theme';
 import SubcriptionScreen from '../../SubcriptionScreen/Subcription';
+import Shop from '../../Shop';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -67,7 +68,7 @@ const ShopTabs = () => {
         >
             <Tab.Screen
                 name="SUBSCRIPTIONSSTAB"
-                component={SubcriptionScreen}
+                component={Shop}
                 options={{
                     tabBarLabel: 'SUBSCRIPTIONS',
                     tabBarAccessibilityLabel: 'SUBSCRIPTIONS',
@@ -76,7 +77,7 @@ const ShopTabs = () => {
             />
             <Tab.Screen
                 name="MERCHANDISETAB"
-                component={SubcriptionScreen}
+                component={Shop}
                 options={{
                     tabBarLabel: 'MERCHANDISE',
                     tabBarAccessibilityLabel: 'MERCHANDISE',
@@ -90,3 +91,11 @@ const ShopTabs = () => {
 export default ShopTabs;
 
 const styles = StyleSheet.create({});
+
+
+
+
+
+
+
+

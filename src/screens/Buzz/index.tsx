@@ -14,7 +14,6 @@ const BuzzScreen = () => {
         <ImageBackground source={require("../../assets/background.png")} className=" h-full">
             <ScrollView>
 
-
                 <View className="w-full h-42 bg-[#FF8F8F]">
                     <Text className=" font-black text-[18px] text-[#50165F] m-2 border-b-[3px] border-[#50165F]">
                         JOIN THE CONVERSATION!
