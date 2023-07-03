@@ -9,17 +9,44 @@ import {
 import React from 'react';
 
 import {Table, Row, Rows} from 'react-native-table-component';
+import MatchTable from '../../components/MatchTable';
 
 const StatScreen = () => {
-  const tableHead = ['TEAM', 'PL', 'W', 'D', 'L', '+/-', 'PTS'];
-  const tableData = [['BURENF', '25', '30', '23', '23', '10-2', '30']];
+  const matchData = [
+    {
+      name: 'bru',
+      uri: '',
+      date: '10',
+      venue: '10',
+      homeTeam: '10',
+      awayTeam: '10',
+      score: '30',
+    },
+    {
+      name: 'bru',
+      date: '10',
+      venue: '10',
+      homeTeam: '10',
+      awayTeam: '10',
+      score: '30',
+    },
+    {
+      name: 'bru',
+      date: '10',
+      venue: '10',
+      homeTeam: '10',
+      awayTeam: '10',
+      score: '30',
+    },
+    // Add more match data here
+  ];
 
   return (
     <ImageBackground
       source={require('../../assets/statbg.png')}
       className="h-full w-full items-center">
       <ScrollView className="mb-4">
-        <View className="bg-[#b66194] w-[370px] px-3 rounded-md h-[330px] mt-5 items-start">
+        {/* <View className="bg-[#b66194] w-[370px] px-3 rounded-md h-[330px] mt-5 items-start">
           <View className="bg-[#bf4c91] w-[370px] h-[35px] rounded-md space-x-2 border-b  border-[#FF0000] items-center flex-row px-2">
             <Text style={styles.fontstyletop}> TEAM</Text>
 
@@ -149,7 +176,7 @@ const StatScreen = () => {
           <View className="border-b-[0.5px] w-[406px] mt-3 border-[#FF0000]"></View>
 
           <Text style={styles.sellallstyles}>See all</Text>
-        </View>
+        </View> */}
         {/* <View style={styles.container}>
           <Text style={styles.cell}>Buren</Text>
           <View style={styles.row}>
@@ -174,6 +201,8 @@ const StatScreen = () => {
             <Text style={styles.cell}>New York</Text>
           </View>
         </View> */}
+
+        <MatchTable />
         <View className="bg-[#B23982] w-[370px]  rounded-md h-[330px] mt-5 items-center relative">
           <Text className="text-white absolute left-5 top-3 font-bold text-[15px]">
             TOP PLAYERS

@@ -34,7 +34,7 @@ const BuzzScreen = () => {
 
                 </View>
 
-                <View className="bg-[#eb8199]  h-full w-full mt-3">
+                <View className="bg-[#eb8199]  h-full w-full mt-3 items-center">
                     <PostsCard />
                     {/* <PostsCard />
                     <PostsCard /> */}
