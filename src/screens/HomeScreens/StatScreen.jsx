@@ -8,49 +8,17 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import {Table, Row, Rows} from 'react-native-table-component';
-import MatchTable from '../../components/MatchTable';
-
 const StatScreen = () => {
-  const matchData = [
-    {
-      name: 'bru',
-      uri: '',
-      date: '10',
-      venue: '10',
-      homeTeam: '10',
-      awayTeam: '10',
-      score: '30',
-    },
-    {
-      name: 'bru',
-      date: '10',
-      venue: '10',
-      homeTeam: '10',
-      awayTeam: '10',
-      score: '30',
-    },
-    {
-      name: 'bru',
-      date: '10',
-      venue: '10',
-      homeTeam: '10',
-      awayTeam: '10',
-      score: '30',
-    },
-    // Add more match data here
-  ];
-
   return (
     <ImageBackground
       source={require('../../assets/statbg.png')}
       className="h-full w-full items-center">
       <ScrollView className="mb-4">
-        {/* <View className="bg-[#b66194] w-[370px] px-3 rounded-md h-[330px] mt-5 items-start">
+        <View className="bg-[#b66194] w-[370px]  rounded-md h-[330px] mt-5 items-center">
           <View className="bg-[#bf4c91] w-[370px] h-[35px] rounded-md space-x-2 border-b  border-[#FF0000] items-center flex-row px-2">
             <Text style={styles.fontstyletop}> TEAM</Text>
 
-            <View className="flex-row items-center mr-2">
+            <View className="flex-row items-center mr-6">
               <Image source={require('../../assets/livecon.png')} />
               <Text
                 style={{
@@ -72,8 +40,8 @@ const StatScreen = () => {
               <Text style={styles.fontstyletop}>PTS</Text>
             </View>
           </View>
-          <View className="  items-center flex-row  space-x-1   mt-2">
-            <View className="flex-row items-center justify-center  space-x-1  mr-2">
+          <View className="  items-center flex-row px-2    mt-2">
+            <View className="flex-row items-center space-x-1 mr-2">
               <Text style={styles.fontstyleptstotal}>1</Text>
               <Image
                 source={require('../../assets/burenga.png')}
@@ -81,8 +49,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-[2px]">
-              <Text style={styles.fontstylepts}> 10</Text>
+            <View className="flex-row items-center space-x-2">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -102,7 +69,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-1">
+            <View className="flex-row items-center space-x-2">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -123,7 +90,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-1">
+            <View className="flex-row items-center space-x-2">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -143,7 +110,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-1">
+            <View className="flex-row items-center space-x-2">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -162,7 +129,7 @@ const StatScreen = () => {
               />
               <Text style={styles.fontstyle}>BERUGA FC</Text>
             </View>
-            <View className="flex-row items-center space-x-1">
+            <View className="flex-row items-center space-x-2">
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
               <Text style={styles.fontstylepts}> 10</Text>
@@ -176,33 +143,7 @@ const StatScreen = () => {
           <View className="border-b-[0.5px] w-[406px] mt-3 border-[#FF0000]"></View>
 
           <Text style={styles.sellallstyles}>See all</Text>
-        </View> */}
-        {/* <View style={styles.container}>
-          <Text style={styles.cell}>Buren</Text>
-          <View style={styles.row}>
-            <Text style={[styles.cell, styles.header]}>TEAM</Text>
-
-            <Text style={[styles.cell, styles.header]}>PL</Text>
-            <Text style={[styles.cell, styles.header]}>W</Text>
-            <Text style={[styles.cell, styles.header]}>D</Text>
-            <Text style={[styles.cell, styles.header]}>L</Text>
-            <Text style={[styles.cell, styles.header]}>+/-</Text>
-            <Text style={[styles.cell, styles.header]}>GD</Text>
-            <Text style={[styles.cell, styles.header]}>PTS</Text>
-          </View>
-          <View style={styles.row}>
-            <Text style={styles.cell}>Buren</Text>
-            <Text style={styles.cell}>Buren</Text>
-            <Text style={styles.cell}>25</Text>
-            <Text style={styles.cell}>New York</Text>
-            <Text style={styles.cell}>Buren</Text>
-            <Text style={styles.cell}>25</Text>
-            <Text style={styles.cell}>New York</Text>
-            <Text style={styles.cell}>New York</Text>
-          </View>
-        </View> */}
-
-        <MatchTable />
+        </View>
         <View className="bg-[#B23982] w-[370px]  rounded-md h-[330px] mt-5 items-center relative">
           <Text className="text-white absolute left-5 top-3 font-bold text-[15px]">
             TOP PLAYERS
@@ -494,30 +435,8 @@ const StatScreen = () => {
 export default StatScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    marginVertical: 10,
-    borderWidth: 1,
-    borderColor: '#bf4c91',
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  row: {
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderColor: '#000',
-  },
-  cell: {
-    flex: 1,
-    paddingVertical: 10,
-    paddingHorizontal: 5,
-  },
-  header: {
-    backgroundColor: '#bf4c91',
-    color: '#fff',
-    fontWeight: 'bold',
-  },
   fontstyletop: {
-    fontSize: 15,
+    fontSize: 23,
     fontFamily: 'LeagueGothic-Regular',
     color: '#50165F',
   },
