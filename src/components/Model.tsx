@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import Modal from "react-native-modal";
 
 const ModalPopup = ({ visible, onClose }: any) => {
-    // const navigation = useNavigation<any>();
+    const navigation = useNavigation<any>();
     const [chanegBg, setChangeBg] = useState(false)
     const HandleBackground = () => {
         setChangeBg(!chanegBg)
@@ -112,7 +112,7 @@ const ModalPopup = ({ visible, onClose }: any) => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity className=" bg-[#FF0000] h-[79px] w-[428px] mt-3  justify-center items-center" onPress={onClose} >
+                    <TouchableOpacity className=" bg-[#FF0000] h-14 w-80 mt-3  rounded-b-[30px] justify-center items-center" onPress={() => navigation.navigate('SubscribeScreen')} >
                         <Text className="text-[18px] text-white font-bold">Save</Text>
                     </TouchableOpacity>
 

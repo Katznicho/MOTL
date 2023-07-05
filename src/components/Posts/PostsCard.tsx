@@ -6,7 +6,7 @@ const TweetCard = ({ tweet }) => {
     const profile_name = user.name
     const profile_image_url = user.profile_image_url_https
     return (
-        <View className=" rounded-[10px] w-82 h-[600px] shadow-lg bg-[#d35fa1]  space-y-4 m-4">
+        <View className=" rounded-[10px] w-82 h-[630px] shadow-lg bg-[#d35fa1]  space-y-4 m-4">
             <View className="flex-row items-center px-3 pt-3">
 
                 <View className="w-[62px] h-[62px] bg-slate-400  rounded-full mr-2">
@@ -21,11 +21,11 @@ const TweetCard = ({ tweet }) => {
             </View>
             <Text className="text-white text-[13px] px-3 pt-2"> In the groooooove</Text>
             <Text className="text-[13px] text-[#0060D0] px-3">@MOTL <Text className=" text-white"> let’s go.</Text> </Text>
-            <View className="w-72 h-[236px] bg-gray-500 rounded-[10px] items-center m-5">
+            <View className="w-80 h-[236px] bg-gray-500 rounded-[10px] items-center m-5">
 
                 {tweet.entities.media && (<Image
                     source={{ uri: tweet.entities.media[0].media_url_https }}
-                    className="w-72  h-[236px] rounded-[10px]"
+                    className="w-80  h-[236px] rounded-[10px]"
                     resizeMode='cover'
                     resizeMethod='resize'
 
@@ -61,7 +61,13 @@ const TweetCard = ({ tweet }) => {
                 </View>
             </View>
             <View className="w-[35\30px] h-[30px] bg-[#8b367b] rounded-[25px] items-center m-2 justify-center">
-                <Text className="text-white text-[14px] font-poppins">Read{tweet.reply_count} Rpl</Text>
+                <Text style={
+                    {
+                        color: 'white',
+                        fontWeight: 'Poppins-Bold',
+                        fontSize: 14,
+                    }
+                }>Read{tweet.reply_count} Replies</Text>
             </View>
 
         </View>
@@ -97,7 +103,7 @@ const PostsCard = () => {
 
 
     return (
-        <View>
+        <View className=''>
 
             {tweets.map((tweet) => (
                 <TweetCard key={tweet.id} tweet={tweet} />

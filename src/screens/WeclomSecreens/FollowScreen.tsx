@@ -27,7 +27,7 @@ const FollowScreen = () => {
     return (
         <ImageBackground source={require('../../assets/subcriptionbg.png')} className='h-full items-center ' >
             <View className=" flex-row   ml-1 space-x-24 m-4 px-6 items-center absolute left-0 ">
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.goBack()} className='absolute left-2'>
                     <ArrowLeftIcon color="#50165F" size={30} />
                 </TouchableOpacity>
 
@@ -163,8 +163,8 @@ const FollowScreen = () => {
             <Text className="text-white  font-semibold  text-[15px]">Get game updates, news, event alerts  on your </Text>
             <Text className="text-white  font-semibold  text-[15px]"> favourite teams</Text>
 
-            <TouchableOpacity onPress={navigation.navigate('SubscribeScreen')}
-                className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-[100px] ">
+            <TouchableOpacity onPress={openModal}
+                className="w-72 h-12 items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-[60px] ">
                 <Text className="text-white font-bold text-[21px]">Next </Text>
             </TouchableOpacity>
             <ModalPopup visible={modalVisible} onClose={closeModal} />

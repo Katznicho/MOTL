@@ -138,7 +138,7 @@ const EnableLocationScreen = () => {
 
 
                 }
-                    className="w-[360px] h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-[100px] ">
+                    className="w-72 h-[51px] items-center justify-center  bg-[#FF0000] rounded-[30px] mt-2 absolute bottom-14 ">
                     <Text className="text-white font-bold text-[21px]">Next </Text>
                 </TouchableOpacity>
                 <Image

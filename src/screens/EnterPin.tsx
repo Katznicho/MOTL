@@ -21,12 +21,23 @@ export default function EnterPin() {
     };
     return (
         <View className="items-center justify-center  relative  ">
-            <TouchableOpacity className="absolute left-5 top-5  ">
+            <TouchableOpacity onPress={() => navigation.goBack()}
+
+                className="absolute left-5 top-5  ">
                 <ArrowLeftIcon className="" color='black' size={30} /></TouchableOpacity>
 
             <View className='justify-center items-center top-[184px]' >
-                <Text className='text-black font-bold text-[30px]'>Enter your code</Text>
-                <Text>256075321236 <Text className='text-black font-bold text-[20px] '>Resend</Text></Text>
+                <Text className='text-black font-bold text-[30px]' style={{
+                    fontFamily: 'Roboto-Bold',
+                    fontSize: 30,
+                    color: 'black'
+                }}>Enter your code</Text>
+                <Text>256075321236 <Text className='text-black font-bold text-[20px] 
+                ' style={{
+                        fontFamily: 'Roboto-Bold',
+                        fontSize: 20,
+                        color: 'black'
+                    }}>Resend</Text></Text>
                 <View className='flex-row space-x-5 mt-7'>
                     <View className='border-b-[3px] w-[67px]'>
                         <TextInput maxLength={1}
@@ -50,8 +61,13 @@ export default function EnterPin() {
                     </View>
                 </View>
                 <TouchableOpacity onPress={openModal}
-                    className='bg-[#FF0000] w-[342px] h-[58px] mt-14 rounded-[30px] items-center justify-center'>
-                    <Text className='text-white text-[20px] font-bold'>Verify</Text>
+                    className='bg-[#FF0000] w-72 h-14 mt-14 rounded-[30px] items-center justify-center'>
+                    <Text className='text-white text-[20px] font-bold'
+                        style={{
+                            fontFamily: 'Roboto-Bold',
+                            fontSize: 30,
+                            color: 'white'
+                        }}>Verify</Text>
                 </TouchableOpacity>
                 <CurrencyModle visible={modalVisible} onClose={closeModal} />
             </View>
