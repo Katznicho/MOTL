@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { View, Text, ImageBackground, TouchableOpacity, Image, Alert } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { PermissionsAndroid } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
@@ -98,10 +98,16 @@ const EnableLocationScreen = () => {
         }
     }
     const enableLcation = () => {
-        checkLocationPermission();
+        // checkLocationPermission();
         navigation.navigate('FollowScreen')
 
     }
+
+    useEffect(() => {
+        checkLocationPermission();
+        getLocation();
+    }, [])
+
     //request for ios location permission
     const navigation = useNavigation<any>();
     return (

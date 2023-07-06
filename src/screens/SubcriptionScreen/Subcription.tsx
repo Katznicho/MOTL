@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setAppIntro } from '../../redux/slices/UserSlice';
 const data = ['BERUGA FC.', '', 'BERUGA FC.', 'BERUGA FC.'];
 
-const SubcriptionScreen = ({ navigation }) => {
+const SubcriptionScreen = ({ navigation }:any) => {
   const [subcribeFee, SetSubcriptionFee] = useState(25000);
   const { } = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
@@ -27,6 +27,7 @@ const SubcriptionScreen = ({ navigation }) => {
   const onFinish = () => {
     dispatch(setAppIntro())
   }
+  
   return (
     <View className=" bg-[#fe7878] h-full w-full">
       <View className=" flex-row items-center justify-between m-4">
@@ -35,7 +36,7 @@ const SubcriptionScreen = ({ navigation }) => {
         </TouchableOpacity>
 
         <Image source={require('../../assets/circles.png')} />
-        <TouchableOpacity onPress={() => navigation.navigate('PaymentScreen')}>
+        <TouchableOpacity onPress={onFinish}>
           <Text className=" text-white">SKIP</Text>
         </TouchableOpacity>
       </View>
