@@ -163,7 +163,8 @@ const Cards = () => {
 
                                                         fontWeight: 600,
                                                         fontFamily: 'Poppins-Light',
-                                                        fontSize: 14
+                                                        fontSize: 14,
+                                                        color: 'black'
 
 
                                                     }}> comments </Text>
@@ -188,7 +189,7 @@ const Cards = () => {
 
                                                     </TouchableOpacity>
                                                     <Text style={{
-                                                        Color: 'black',
+                                                        color: 'black',
                                                         fontWeight: 600,
                                                         fontFamily: 'Poppins-Bold',
                                                         fontSize: 15
@@ -197,8 +198,8 @@ const Cards = () => {
                                                     }}>Like</Text>
                                                 </View>
                                                 <View className='items-center flex-row  space-x-0 '>
-                                                    <ChatBubbleOvalLeftEllipsisIcon color='gray' size={32} className='h-7 w-10 bg-black placeholder:bg-red-400' />
-                                                    <TextInput placeholder='commenet'
+                                                    <ChatBubbleOvalLeftEllipsisIcon color='gray' size={32} className='' />
+                                                    <TextInput placeholder='comment'
                                                         maxLength={15}
                                                         placeholderTextColor='black'
 
@@ -210,7 +211,7 @@ const Cards = () => {
                                                     <TouchableOpacity className='flex-row items-center space-x-1'>
                                                         <Image source={require('../assets/share2.png')} className='w-7 h-4 ' />
                                                         <Text style={{
-                                                            Color: 'black',
+                                                            color: 'black',
                                                             fontWeight: 600,
                                                             fontFamily: 'Poppins-Bold',
                                                             fontSize: 15
